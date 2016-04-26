@@ -12,8 +12,8 @@ public class Chapter1_1 {
 		String newLine = System.getProperty("line.separator");	//This will retrieve line separator dependent on OS.
 		
 		System.out.println( "Welcome to Java" + newLine + 
-							"Welcome to Computer Science" + newLine + 
-							"Programming is fun" );
+					"Welcome to Computer Science" + newLine + 
+					"Programming is fun" );
 	}
 
 }
