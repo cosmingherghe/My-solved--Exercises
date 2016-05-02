@@ -1,7 +1,7 @@
 public class Chapter1_10 {
 	
 	/**
-	 *   Exercise 10 
+	 *   Exercise 10 & 12 - similar 
 	 * 	 Displays the average speed in miles per hour
 	 *   Assume a runner runs 18 kilometers in 1hour, 35 minutes and 40 seconds
 	 */
