@@ -11,9 +11,9 @@ public class Chapter1_11 {
 	 
 	public static void main (String[] args)	{
 		 
-		double immigrantPS = 45;
-		double birthPS = 7;
-		double death = 13;
+		int immigrantPS = 45;
+		int birthPS = 7;
+		int death = 13;
 		int population = 312032486;
 		
 		double asouls = ((immigrantPS + birthPS)/2.0) - death; //average for a new souls in US minus average for souls out from US.. 26-13 = 13
