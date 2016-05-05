@@ -1,5 +1,5 @@
 
-public class Chapter1_6 {
+public class Chapter1_06 {
 
 	/**
 	 * Exercise 6 (Summation of a series)
