@@ -1,5 +1,5 @@
 
-public class Chapter1_4 {
+public class Chapter1_04 {
 
 	/**
 	 * Exercise 4 (Print table)
