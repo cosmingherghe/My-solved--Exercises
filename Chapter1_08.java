@@ -1,5 +1,5 @@
 
-public class Chapter1_8 { 
+public class Chapter1_08 { 
 
 	/**
 	 * 	Exercise 8 
