@@ -1,5 +1,5 @@
 
-public class Chapter1_2 {
+public class Chapter1_02 {
 
 	/**
 	 * Exercise 2 (Display five messages)
