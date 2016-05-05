@@ -1,5 +1,5 @@
 
-public class Chapter1_3 {
+public class Chapter1_03 {
 
 	/**
 	 *  (Display a pattern)
