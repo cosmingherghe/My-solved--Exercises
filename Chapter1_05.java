@@ -1,5 +1,5 @@
 
-public class Chapter1_5 {
+public class Chapter1_05 {
 
 	/**
 	 * Exercice 5 (Compute expresion - Result)
