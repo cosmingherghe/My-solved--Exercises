@@ -1,5 +1,5 @@
 import java.time.*;
-public class Chapter2_12 {
+public class Chapter2__12 {
 	
 	/*
 	 * If today is Tuesday, what will be the day in 100 days?
