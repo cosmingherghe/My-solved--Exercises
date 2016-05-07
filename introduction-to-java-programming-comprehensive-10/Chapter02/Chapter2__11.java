@@ -1,5 +1,5 @@
 
-public class Chapter2_11 {
+public class Chapter2__11 {
 
 	/*
 	 * Display results for reminders 
