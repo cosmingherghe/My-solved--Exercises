@@ -3,8 +3,8 @@ import java.util.Scanner;
 public class Chapter2_08 {
 
 	/**
-	 * Sum the digits in an integer 
-	 * 	- a program that reads an integer between 0 and 1000 and adds all the digits in the integer.
+	 * 	Current time
+	 * 	- it prompts the user to enter the time zone offset to GMT and displays the time in the specified time zone
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
