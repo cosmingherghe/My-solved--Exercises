@@ -1,5 +1,5 @@
 
-public class Chapter2_10 {
+public class Chapter2__10 {
 
 	/*
 	 * Find the largest and smallest 
