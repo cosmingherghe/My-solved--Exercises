@@ -4,7 +4,7 @@ public class Chapter2_13 {
 
 	/**
 	 * 	Exercise 2.13
-	 * 	 Physics: finding runway length)
+	 * 	 - a savings account with the annual interest rate 5%
 	 */
 	 
 	public static void main (String[] args)	{
