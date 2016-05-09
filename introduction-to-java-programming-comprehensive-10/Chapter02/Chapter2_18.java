@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Chapter2_18 {
 	/**
-	 *		Geometry: area of a hexagon
+	 *		Print a table
 	 */
 	public static void main(String[] args) {
 
