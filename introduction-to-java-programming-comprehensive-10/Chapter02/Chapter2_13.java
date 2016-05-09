@@ -9,18 +9,18 @@ public class Chapter2_13 {
 	 
 	public static void main (String[] args)	{
 
-		double account_value = 0;
-		 
 		Scanner input = new Scanner(System.in);
 
 		System.out.print( "Enter the monthly saving amount and for how many months: ");
 
 		double amount =  input.nextDouble();
 		double months = input.nextDouble();
+		
+		double account_value = amount * (1 + 0.00417); //calculating first month
 
-		for( int i = 0; i<months; i++) {
+		for( int i = 1; i<months; i++) { //calculating rest of months 
 			
-			account_value = amount * (1 + 0.00417);
+			account_value  = (account_value + amount) * (1 + 0.00417);
 		}
 		
 		System.out.println( "After the " + months  + " months, the account value is " + account_value );
