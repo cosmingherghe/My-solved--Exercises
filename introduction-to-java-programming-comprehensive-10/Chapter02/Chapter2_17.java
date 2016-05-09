@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Chapter2_17 {
 	/**
-	 *		Geometry: area of a hexagon
+	 *		(Science: wind-chill temperature) How cold is it outside?
 	 */
 	public static void main(String[] args) {
 
