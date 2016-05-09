@@ -20,10 +20,11 @@ public class Chapter2_19 {
 		double by = input.nextDouble();
 		double cx = input.nextDouble();
 		double cy = input.nextDouble();
+		 
 		
 		double area = ( ax * (by - cy) + bx * (cy - ay) + cx * (ay - by) )/2;
 		
-		System.out.println( "The area of the triangle is: " + area );
+		System.out.println( "The area of the triangle is: " + Math.abs(area) );
 
 	}
 }
