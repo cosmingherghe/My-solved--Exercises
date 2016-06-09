@@ -29,8 +29,7 @@ public class Chapter3_01 {
 		else {
 			System.out.println("The two roots of the quadratic equation are: "
 					 + ( (-b - Math.pow(discriminant, 0.5)) / (2*a) ) + " and "
-					 + ( (-b + Math.pow(discriminant, 0.5)) / (2*a) ) + "." 
-					);
+					 + ( (-b + Math.pow(discriminant, 0.5)) / (2*a) ) + "." );
 		}
 		 
 	}
