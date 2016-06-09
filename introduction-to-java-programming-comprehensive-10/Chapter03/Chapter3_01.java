@@ -24,13 +24,13 @@ public class Chapter3_01 {
 		}
 		else if(discriminant == 0) {
 			System.out.println("The root of the quadratic equation is: " 
-								        + (-b/(2*a)) );
+								+ (-b/(2*a)) );
 		}
 		else {
 			System.out.println("The two roots of the quadratic equation are: "
-					              + ( (-b - Math.pow(discriminant, 0.5)) / (2*a) ) + " and "
-								        + ( (-b + Math.pow(discriminant, 0.5)) / (2*a) ) + "." 
-								        );
+							    + ( (-b - Math.pow(discriminant, 0.5)) / (2*a) ) + " and "
+								+ ( (-b + Math.pow(discriminant, 0.5)) / (2*a) ) + "." 
+								);
 		}
 		 
 	}
