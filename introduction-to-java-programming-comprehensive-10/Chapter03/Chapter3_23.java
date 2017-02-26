@@ -17,7 +17,7 @@ public class Main {
 	double point1 = input.nextDouble();
 	double point2 = input.nextDouble();
 	
-	if( point1 < x1 && point1 > x2 && point2 < y1 && point2 > y2 ) {
+	if( point1 <= x1 && point1 >= x2 && point2 <= y1 && point2 >= y2 ) {
 		System.out.print("Point (" + point1 + ", " + point2 + ") is in the rectangle.");
 	} else {
 		System.out.print("Point (" + point1 + ", " + point2 + ") is not in the rectangle.");
