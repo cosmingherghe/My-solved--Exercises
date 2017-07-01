@@ -14,7 +14,7 @@ public class  GreatCircleDistance {
 	lat2 = input.nextDouble();
 	lon2 = input.nextDouble();
 	
-	double pointsDistance = 6371.01 * Math.acos( Math.sin(Math.toRadians(lat1)) * Math.sin(Math.toRadians(lat2)) * Math.cos(Math.toRadians(lat1)) * Math.cos(Math.toRadians(lat2)) * Math.cos(Math.toRadians(lon1) - Math.toRadians(lon2)) );
+	double pointsDistance = 6371.01 * Math.acos( Math.sin(Math.toRadians(lat1)) * Math.sin(Math.toRadians(lat2)) + Math.cos(Math.toRadians(lat1)) * Math.cos(Math.toRadians(lat2)) * Math.cos(Math.toRadians(lon1) - Math.toRadians(lon2)) );
 	
 	System.out.println( "The distance between the two points is :" + pointsDistance );
 	 
