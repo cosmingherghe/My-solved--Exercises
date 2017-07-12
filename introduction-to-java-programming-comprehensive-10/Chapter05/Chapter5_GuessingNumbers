@@ -10,7 +10,7 @@ public class HelloWorld {
   public static void main(String[] args) {
   
     	Scanner input = new Scanner(System.in);
-  	int  number = (int)( Math.random() * 100 );
+  	int  number = (int)( Math.random() * 101 );
   
     	System.out.print("Guess a magic number between 0 and 100. \nEnter your guess: ");
     	int answer = input.nextInt();
