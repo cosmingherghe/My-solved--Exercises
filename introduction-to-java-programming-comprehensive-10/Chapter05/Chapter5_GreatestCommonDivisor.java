@@ -20,7 +20,7 @@ public class GreatestCommonDivisor {
 			k++;
 		}
 
-	System.out.println("The greatest common divisor for " + n1 + 24 " and " + n2 + " is " + gcd);
+	System.out.println("The greatest common divisor for " + n1 + " and " + n2 + " is " + gcd);
 	}
 }
 
@@ -47,6 +47,6 @@ public class GreatestCommonDivisor {
 			gcd = k;
 		}
 
-	System.out.println("The greatest common divisor for " + n1 + 24 " and " + n2 + " is " + gcd);
+	System.out.println("The greatest common divisor for " + n1 + " and " + n2 + " is " + gcd);
 	}
 }
