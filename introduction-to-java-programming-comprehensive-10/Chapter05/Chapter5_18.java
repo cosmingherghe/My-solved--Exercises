@@ -3,36 +3,44 @@ public class HelloWorld {
   
 	  	int lineNumbers = 6;
 	  	int numbersPerLine = 6;
-	  	int numberOfPatterns = 4;
-	  	
-	  	
+ 
 	  	numbersPerLine++;
+	  	
+	  	System.out.println("Pattern A       Pattern B         Pattern C       Pattern D");
+	  	
 	  	for(int line = 0; line<lineNumbers; line++){ //i = number of the line
 	  		
 	  		//Start line
 	  		String lineOut = ""; //Each line, a new String
-	  		int patterns = numberOfPatterns; //Each line, a same number of patterns
-	  		
-	  		while(patterns > 0) {
-	  		
-	  			if(patterns %2 == 0) {
+ 		
 			  		//Print Pattern Type A
 			  		for(int i = 1; i<numbersPerLine; i++){
 		
-			  			lineOut += (i<line+2) ? i+ " " : "__";
-			  		}
-		  		}
-		  		else {
+			  			lineOut += (i<line+2) ? i+ " " : "  ";
+			  		} 
+			  		lineOut += "    ";
+			  		
 			  		//Print Pattern Type B
-			  		for(int j = 1;  j<numbersPerLine; j++){
+			  		for(int i = 1;  i<numbersPerLine; i++){
 		
-			  		  	lineOut += (numbersPerLine - line > j) ? j + " " : "__"; 
+			  		  	lineOut += (numbersPerLine - line > i) ? i + " " : "  "; 
 			  		}
-		  		}
-		  		
-		  		patterns--;
-			}//End while
-			
+			  		lineOut += "    ";
+			  		
+			  		//Print Pattern Type C
+			  		for(int i = numbersPerLine; i>0; i--){
+		
+			  		  	lineOut += (line + 2 > i) ? i + " " : "  "; 
+			  		}
+			  		lineOut += "    ";
+			  		
+			  		//Print Pattern Type D
+			  		for(int i = 1;  i<numbersPerLine; i++){
+		
+			  		  	lineOut += (line < i) ? (i - line)  + " " : "  ";  
+			  		}
+			  		
+			  		 	
 	  		System.out.println(lineOut + "\t"); //Print lineOut and Start a new line
 	  	}
   	 
