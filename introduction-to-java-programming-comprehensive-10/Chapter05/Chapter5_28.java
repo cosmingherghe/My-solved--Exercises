@@ -11,7 +11,7 @@ public class HelloWorld {
 		
 		Scanner input = new Scanner(System.in);
 		
-		System.out.println("Enter the first day of the year and year (e.g. 2 for Tuesday, 2012): ");
+		System.out.print("Enter the first day of the year and year (e.g. 2 for Tuesday, 2012): ");
 		days = input.nextInt() - 1; // if switchFirstDay = 0 is "Monday"
 		year = input.nextInt();
 		
