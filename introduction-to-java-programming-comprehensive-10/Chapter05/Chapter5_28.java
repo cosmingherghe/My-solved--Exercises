@@ -46,11 +46,11 @@ public class HelloWorld {
 		            case 12: monthString = "December";
 		                     break; 
 		        }//end month switch 
-		        
-		        //set name of the day for the first day of the month 
-		        switchFirstDay = days % 7;
+
+			
+		        days %= 7; //set name of the day for the first day of the month 
 		         
-			switch (switchFirstDay) {
+			switch (days) {
 			case 0:
 				monthFirstDay = "Monday";
 				break;
