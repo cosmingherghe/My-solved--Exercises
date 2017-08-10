@@ -1,34 +1,25 @@
+import java.util.Scanner;
+
 public class HelloWorld {
 	public static void main(String[] args) {
 
 		int days = 0;
-		int firstDayOfYear;
+		int switchFirstDay;
 		int year;
-		String monthString;
+		String monthString = "";
+		String monthFirstDay = ""; 
 		
 		Scanner input = new Scanner(System.in);
 		
 		System.out.println("Enter the first day of the year and year (e.g. 2 for Tuesday, 2012): ");
-		firstDayOfYear = input.nextInt();
-		days += firstDayOfYear;
+		days = input.nextInt() - 1; // if switchFirstDay = 0 is "Monday"
 		year = input.nextInt();
 		
-		//check if it's a leap year
-		boolean isLeapYear = (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+		System.out.println(); //a new line for a clearer output 
 		
 	  	for(int month = 1; month < 13; month++) {
-	
-        		//compute how many days has each month
-		        if( (month == 1) || (month == 3) || (month == 5) || (month == 7) || (month == 8) || (month == 10) || (month == 12)){
-		        	days += 31;
-		        }
-		        else if((month == 4) || (month == 6) || (month == 9) || (month == 11)){
-		        	days += 30;
-		        }else if(month == 2) {
-		        	days += (isLeapYear) ? 29 : 28;
-		        }
-		        
-		        
+	  
+	  		//set name of the month
 			switch (month) {
 		            case 1:  monthString = "January";
 		                     break;
@@ -56,10 +47,10 @@ public class HelloWorld {
 		                     break; 
 		        }//end month switch 
 		        
-		        
-		        monthFirstDay = days % 7;
-				
-			switch (monthFirstDay) {
+		        //set name of the day for the first day of the month 
+		        switchFirstDay = days % 7;
+		         
+			switch (switchFirstDay) {
 			case 0:
 				monthFirstDay = "Monday";
 				break;
@@ -82,10 +73,25 @@ public class HelloWorld {
 				monthFirstDay = "Sunday";
 				break;
 			}//end day switch 
-		        	 
+			
+			 
+			//check if it's a leap year
+			boolean isLeapYear = (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+		        
+		        //compute how many days has each month
+		        if( (month == 1) || (month == 3) || (month == 5) || (month == 7) || (month == 8) || (month == 10) || (month == 12)){
+		        	days += 31;
+		        }
+		        else if((month == 4) || (month == 6) || (month == 9) || (month == 11)){
+		        	days += 30;
+		        }else if(month == 2) {
+		        	days += (isLeapYear) ? 29 : 28;
+		        } 
+		        
+		        //Print the month, day, year and the name of the day
 		        System.out.println( monthString + " 1, " + year + " is " + monthFirstDay);
 
-		}//end for loop
-		
+		}//end for loop 
+ 
 	}
 }
