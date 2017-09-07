@@ -39,7 +39,7 @@ public class FutureInvestment {
 		
 		System.out.println("Years \tFuture Value");
 		for(int i = 1; i <= years; i++) { 
-			System.out.printf( "%2d \t%.2f \n", i, futureInvestmentValue(investmentAmount, monthlyInterestRate, i) );
+			System.out.printf( "%d \t%.2f \n", i, futureInvestmentValue(investmentAmount, monthlyInterestRate, i) );
 		}
 
 	}
