@@ -14,7 +14,7 @@ import java.io.*;
 import java.lang.*;
 import java.util.*;
 
-public class HelloWorld {
+public class PhoneKeypads {
 	public static void main(String[] args) {
 	
 		Scanner input = new Scanner(System.in);
@@ -37,6 +37,7 @@ public class HelloWorld {
 				fullNumber += letter;
 			}
 		}
+		return fullNumber;
 	}
 	
 	public static int getNumber(char letter) {
@@ -98,7 +99,7 @@ public class HelloWorld {
 	            case 'X':
 	            case 'Y':
 	            case 'Z':
-	            case 'W':
+	            case 'w':
 	            case 'x':
 	            case 'y':
 	            case 'z': 	telephoneButtonNumber = 9;
