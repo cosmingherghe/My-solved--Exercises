@@ -1,11 +1,30 @@
-public class HelloWorld {
+/**
+*	(Financial application: print a tax table)
+*/
+public class FinancialTaxTable {
+
 	public static void main(String[] args) {
-  
-  	System.out.printf("  i \t m(i) \n ---------------\n");
-  	
-  	}
-  
-	public static double computeTax(int status, double taxabletaxableIncome) {
+
+	  	System.out.println("Taxable  \tSingle	\tMarried Joint	\tMarried	\tHead of");
+	  	System.out.println("Income   \t      	\tor Qualifying	\tSeparate\ta House");
+	  	System.out.println("         \t      	\tWidow(er)");
+	  	System.out.println("-------------------------------------------------------------------------------");
+	  	
+	  	for(int taxableIncome = 50000; taxableIncome<60001; taxableIncome += 50){
+	  		
+	  		System.out.printf("%d\t\t",taxableIncome);
+	  		
+	  		/**Compute for each status the Income*/
+	  		for(int status = 0; status<4;status++) {
+	  			System.out.printf("%.0f\t\t",computeTax(status, taxableIncome));
+	  		}
+	  		
+	  		System.out.println();//New line after each taxableIncome
+	  	}
+ 	
+	}
+
+	public static double computeTax(int status, double taxableIncome) {
 
 		double tax = 0;
 		
