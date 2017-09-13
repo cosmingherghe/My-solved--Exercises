@@ -18,6 +18,7 @@
 */
 
 
+
 public class ApproximateSquareRoot {
 
 	public static void main(String[] args) {
@@ -30,12 +31,12 @@ public class ApproximateSquareRoot {
 		double lastGuess = 1.0;
 		double nextGuess = (lastGuess + n / lastGuess) / 2;
 		
-		while((nextGuess - lastGuess) > 0.0001){ 
-			lastGuess = nextGuess;
-			nextGuess = (lastGuess + n / lastGuess) / 2;
-		}  
+		do{  
+			lastGuess = nextGuess; 
+			nextGuess = (lastGuess + n / lastGuess) / 2; 
+		}while((lastGuess - nextGuess) > 0.0001);
 		
-		return nextGuess;
+		return nextGuess; 
 	}
 
 }
