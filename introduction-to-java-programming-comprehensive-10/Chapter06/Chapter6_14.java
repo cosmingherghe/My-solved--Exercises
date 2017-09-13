@@ -9,19 +9,16 @@ public class HelloWorld {
 	}
   }
   
-  public static double estimatePi(int m) {
-  	double fraction = 0;
+  public static double estimatePi(int m) { 
   	double estimatePi = 0;
   	
-  	for(int i=1; i<=m;i++){
-	  	fraction = Math.pow(-1, i + 1)/((double)2 * i - 1);
-
-    		if(i%2 == 0)
-    			estimatePi -= fraction;
-    		else
-    			estimatePi += fraction;
-    	}
-    	
-    	return 4 * estimatePi;
+	public static double estimatePi(int m) {
+		double estimatePi = 0;
+		  	
+		for(int i=1; i<=m;i++){
+			estimatePi += Math.pow(-1, i + 1)/((double)2 * i - 1);
+		}  
+		return 4 * estimatePi; 
+	}
   }
 }
