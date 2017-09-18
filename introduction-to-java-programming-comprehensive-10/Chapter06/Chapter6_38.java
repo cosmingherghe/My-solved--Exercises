@@ -4,19 +4,29 @@
 */
 
 public class RandomCharacters {
-	public static void main(String[] args) {
+	public static void main(String[] args) { 
 	
 		//print 100 uppercase letters
 		System.out.println("Print 100 uppercase letters");
 		for(int i=0; i<100; i++){
-			System.out.print( getRandomUpperCaseLetter() + " ");
+			if(i%11==0){
+				System.out.println();
+			}
+			else{
+				System.out.print( getRandomUpperCaseLetter() + " ");
+			}
 		}
 
 		System.out.println(); //New Line
 		//print 100 single digits
 		System.out.println("Print 100 single digits");
 		for(int i=0; i<100; i++){
-			System.out.print( getRandomDigitCharacter() + " ");
+			if(i%11==0){
+				System.out.println();
+			}
+			else{
+				System.out.print( getRandomDigitCharacter() + " ");
+			}
 		}
 	}
 
