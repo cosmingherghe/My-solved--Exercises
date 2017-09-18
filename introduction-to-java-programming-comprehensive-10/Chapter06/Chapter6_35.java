@@ -8,7 +8,7 @@
 
 import java.util.*;
 
-public class pentagonArea {
+public class PentagonArea {
 
 	public static void main(String[] args) {
 
