@@ -27,8 +27,13 @@ public class CountOccurrenceOfNumbers {
 	
 	public static void displayOccurrences(int[] x) {
 		for (int i = 1; i < x.length; i++) {
-			if(x[i] > 0)
-				System.out.println(i + " occurs " + x[i] + " times");
+			if(x[i] > 0) {
+				if(x[i] == 1)
+					System.out.println(i + " occurs " + x[i] + " time"); 
+				else
+					System.out.println(i + " occurs " + x[i] + " times");
+			}
+				
 		}
 	}
 }
