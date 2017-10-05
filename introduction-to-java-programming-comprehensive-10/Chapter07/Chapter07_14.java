@@ -13,7 +13,7 @@ public class Computing_gcd {
 
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-		int[] userInput = new int[10];
+		int[] userInput = new int[5];
 		
 		System.out.print("Enter five numbers: ");
 		
@@ -29,21 +29,30 @@ public class Computing_gcd {
 		
 		int lastDivisor = 1;
 		int testResult; 
+		int minNumber = minNumber(numbers);
 				
-		for (int i = 2; ; i++) {
-			testResult = numbers.length;
-			
+		for (int i = 2; i <= minNumber + 1; i++) {
+			testResult = numbers.length;  
 			for (int j = 0; j < numbers.length; j++) {
-				
-				if(numbers[j] / i == 1)
-					return lastDivisor;	 
-				else if(numbers[j] % i == 0)
-					testResult--; // i is a divisor (factors) for all numbers if testResult is 0
-			}
-			
+				 
+				if(numbers[j] % i == 0)  
+					testResult--; // i is a divisor (factors) for all numbers if testResult is 0 
+			} 
 			if(testResult == 0)
-				lastDivisor = i;
+				lastDivisor = i;  
 		} 
+		return lastDivisor;
+	}
+	
+	public static int minNumber(int... numbers) {
+		int min = numbers[0]; 
+		
+		for (int i = 1; i < numbers.length; i++) {
+			if(min > numbers[i])
+				min = numbers[i];
+		}
+		
+		return min;
 	}
 
 }
