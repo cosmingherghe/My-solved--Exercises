@@ -1,0 +1,47 @@
+import java.util.*;
+
+public class HelloWorld {
+	public static void main(String[] args) {
+	
+		Scanner input = new Scanner(System.in);
+		
+		int ballsNumber, slotsNumber;
+		
+		System.out.print("Enter the number of the balls: ");
+		ballsNumber = input.nextInt();
+		
+		System.out.println("Enter the number of the slots in the machine: ");
+		slotsNumber = input.nextInt();
+		
+		String[] results = playBeanMachine(ballsNumber, slotsNumber);
+		
+	}
+	
+	public static String playBeanMachine(int balls, int slots) {
+		int leftRight;
+		int ballSlotLocation = 0; //0 it's the sarting point where the ball hits 
+		
+		/** for each ball we have a string with the results 
+		+ 1 value for ball location on histogram */
+		String[] results = new String[balls + 1]; 
+		
+		for(int i = 0; i < balls; i++ ) { 
+			results[i] = ""; //starting the path pattern for the ball
+			
+			for(int s = 0; s <= slots; s++){
+				leftRight = (int)(Math.random() * 2); //return 0 or 1
+				
+				results[i] += (leftRight == 0) ? "L" : "R";
+				
+				if(ballSlotLocation != 0) {
+					ballSlotLocation += (leftRight == 0) ? -1 : 1; 
+				}
+				else
+					ballSlotLocation += leftRight;			
+			}
+
+		}
+		results[balls + 1] += ballSlotLocation; //add ball location in the slots
+		return results;	
+	}
+}
