@@ -1,0 +1,49 @@
+import java.util.Scanner;
+
+public class HelloWorld {
+ 
+    public static void main(String[] args) {
+        
+        double[] userDoubles = get10Doubles();
+        bubbleSorting(userDoubles);
+        
+        for(int i = 0; i < userDoubles.length; i++) {
+	        System.out.print(userDoubles[i] + " "); 
+        }
+        
+    }
+    
+     /** Bubble sorting */
+     public static void bubbleSorting(double... numbers) {
+         boolean sorted = true;
+         double temp = numbers[0];
+         
+         do{
+             for(int i = 0; i < numbers.length; i++){
+                 sorted = true;
+                 
+                 for(int j = i + 1; j < numbers.length; j++){
+                 
+                     if(numbers[i] > numbers[j]){
+                         temp = numbers[i];
+                         numbers[i] = numbers[j];
+                         numbers[j] = temp;
+                         sorted = false;
+                     }
+                 }   
+             }
+         }while(sorted);
+     }
+    
+    public static double[] get10Doubles() {
+	    Scanner input = new Scanner(System.in);
+        double[] userInputs = new double[10];
+	    System.out.print("To test program please enter 10 double numbers: "); 
+	    
+        for(int i = 0; i < 10; i++) {
+            userInputs[i] = input.nextDouble();
+        }
+        
+        return userInputs;
+    }
+}
