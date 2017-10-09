@@ -11,11 +11,11 @@ public class HelloWorld {
 		System.out.print("Enter the number of the balls: ");
 		ballsNumber = input.nextInt();
 		
-		System.out.println("Enter the number of the slots in the machine: ");
+		System.out.print("Enter the number of the slots in the machine: ");
 		slotsNumber = input.nextInt();
 		
 		String[] results = playBeanMachine(ballsNumber, slotsNumber);
-		
+		displayResults(results);
 	}
 	
 	public static String[] playBeanMachine(int balls, int slots) {
@@ -28,8 +28,9 @@ public class HelloWorld {
 		
 		for(int i = 0; i < balls; i++ ) { 
 			results[i] = ""; //starting the path pattern for the ball
+			ballSlotLocation = 0;  
 			
-			for(int s = 0; s <= slots; s++){
+			for(int s = 0; s < slots; s++){  
 				leftRight = (int)(Math.random() * 2); //return 0 or 1
 				
 				results[i] += (leftRight == 0) ? "L" : "R";
@@ -40,19 +41,22 @@ public class HelloWorld {
 				else
 					ballSlotLocation += leftRight;			
 			}
-
+			
+			results[balls] += ballSlotLocation; //add ball location in the slots
 		}
-		results[balls + 1] += ballSlotLocation; //add ball location in the slots
+		
 		return results;	
 	}
-    
+
     public static void displayResults(String[] test) {
         
-        for(int i = 0; i <= test.length - 1; i++){
+        for(int i = 0; i < test.length - 1; i++){
             System.out.println(test[i]);
+        }
+         
+        for(int i = 0; i < test.length; i++){ //Display result for each ball location in the slots
+        	
         }
     }
     
 }
-
-
