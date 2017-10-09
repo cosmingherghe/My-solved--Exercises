@@ -15,19 +15,24 @@ public class HelloWorld {
 		slotsNumber = input.nextInt();
 		
 		String[] results = playBeanMachine(ballsNumber, slotsNumber);
-		displayResults(results);
+		displayBallPath(results);
+		
+		displayBuildupInSlots(results);
 	}
 	
 	public static String[] playBeanMachine(int balls, int slots) {
 		int leftRight;
-		int ballSlotLocation = 0; //0 it's the sarting point where the ball hits 
+		int ballSlotLocation; //0 it's the sarting point where the ball hits 
+		
 		
 		/** for each ball we have a string with the results 
 		+ 1 value for ball location on histogram */
 		String[] results = new String[balls + 1]; 
+		results[balls] = "";
 		
 		for(int i = 0; i < balls; i++ ) { 
 			results[i] = ""; //starting the path pattern for the ball
+			
 			ballSlotLocation = 0;  
 			
 			for(int s = 0; s < slots; s++){  
@@ -41,22 +46,54 @@ public class HelloWorld {
 				else
 					ballSlotLocation += leftRight;			
 			}
-			
+
 			results[balls] += ballSlotLocation; //add ball location in the slots
 		}
 		
 		return results;	
 	}
 
-    public static void displayResults(String[] test) {
+    public static void displayBallPath(String[] test) {
         
         for(int i = 0; i < test.length - 1; i++){
             System.out.println(test[i]);
         }
-         
-        for(int i = 0; i < test.length; i++){ //Display result for each ball location in the slots
-        	
+        System.out.println("Test: " + test[test.length - 1]);
+    }
+
+    public static void displayBuildupInSlots(String[] test) {
+    	int[] buildup = new int[test[test.length - 1].length()];
+ 
+    	for(int i = 0; i < buildup.length; i++){ //get number of balls in each slots
+    		buildup[i] = Character.getNumericValue(test[test.length - 1].charAt(i));
         }
+
+	int height = getBiggestNumberOfBallsInSlot(buildup);
+	
+	/** Dipplay Buildup in Slots*/
+        for(int h = height; h > 0; h--){
+        
+        	for(int i = 0; i < buildup.length; i++){
+        	
+	        	if(buildup[i] >= h)
+	        		System.out.print("0");
+	        	else
+	        		System.out.print(" ");
+	        }
+	        System.out.println();//new line as height decreases 
+        }
+    }
+    
+    public static int getBiggestNumberOfBallsInSlot(int[] slot) {
+    	int max = slot[0]; 
+    	
+    	for(int i = 1; i < slot.length; i++){
+        	if(max < slot[i]) {
+        		max = slot[i];
+        	}
+        }
+        
+        return max;
     }
     
 }
