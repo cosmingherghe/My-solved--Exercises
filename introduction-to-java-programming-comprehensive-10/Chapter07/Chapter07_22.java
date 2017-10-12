@@ -8,13 +8,13 @@ public class EightQueens {
 	public static void main(String[] args) {
  
 		int[] chessboard = createBoard(); 
-		int[] queens; // = queensNumbersOnBoard(3);  //add 3 queens on the board
+		int[] queens; 
 		
-		boolean aloha;
+		boolean test;
 		do{
 			queens = queensNumbersOnBoard(8);  //add 8 queens on the board
-			aloha = queensOffRange(chessboard, queens);
-		}while(!aloha);
+			test = queensOffRange(chessboard, queens);
+		}while(!test);
 		
 		displayBoard(chessboard, queens); 
 	}
