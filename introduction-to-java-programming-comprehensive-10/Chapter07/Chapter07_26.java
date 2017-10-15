@@ -36,9 +36,8 @@ public class HelloWorld {
 	public static boolean areArraysStrictlyIdentical(int[] list1, int[] list2) {
 		boolean test = true;
 		if(list1.length != list2.length)
-			test = false;
-		 
-		System.out.println(list1.length + " = " + list2.length);
+			test = false; 
+
 		for(int i = 0; i < list1.length; i++){ 
 			if(list1[i] != list2[i])
 				test = false;
