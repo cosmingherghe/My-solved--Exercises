@@ -26,17 +26,7 @@ public class HelloWorld {
 		System.out.println( "Number of picks: " + numberOfPicks );
 		 
 	}
-	
-	public static void shuffleDeck(int[] cards) {
-		int temp;
-		
-		for(int i = 1; i < cards.length; i++){
-			
-		}
-		
-		System.out.println("Hello World");
-	}
-	
+
 	public static boolean areAllKeysTrue(boolean[] keys) {
 		boolean test = true;
 		for(int i = 0; i < keys.length; i++){
