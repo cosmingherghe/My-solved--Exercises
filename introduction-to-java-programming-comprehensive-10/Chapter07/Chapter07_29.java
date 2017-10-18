@@ -16,11 +16,11 @@ public class PickFourCards {
 				
 				int testSum, spade, heart, diamond, clubs;
 				
-				for (int a = 0; a < 14; a++) { // cards of Spades
+				for (int a = 0; a < 52; a++) {
 					for (int b = a + 1; b < numberCardsInDeck; b++) { // b != a so b = a + 1;
 						
-						for (int c = b + 1; c < numberCardsInDeck - 1; c++) {   // c != a or b ; c = a + 1;
-							for (int d = c + 1; d < numberCardsInDeck - 2; d++) {  // d != a or b or c ; d = c + 1;
+						for (int c = b + 1; c < numberCardsInDeck; c++) {   // c != a or b ; c = a + 1;
+							for (int d = c + 1; d < numberCardsInDeck; d++) {  // d != a or b or c ; d = c + 1;
 								
 								testSum = 0;
 								spade = a%13 == 0 ? 13 : a%13; 
