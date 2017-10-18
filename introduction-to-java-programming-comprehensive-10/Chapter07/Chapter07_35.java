@@ -41,9 +41,8 @@ public class Hangman {
 	public static boolean guessComplete(boolean[] asterisks) {
 		boolean test = false;
 		
-		for (int i = 0; i < asterisks.length; i++) {
-			if(!asterisks[i])
-				test = !asterisks[i]; 
+		for (int i = 0; i < word.length(); i++) { 
+				progress += (asterisks[i]) ? word.charAt(i) + "" : "*";
 		}
 		
 		return test;
