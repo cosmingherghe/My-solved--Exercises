@@ -1,86 +1,57 @@
-public class HelloWorld {
-	public static void main(String[] args) {
-		String[] suits = {"Spades", "Hearts", "Diamonds", "Clubs"};
-		String[] ranks = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"};
+// (Game: pick four cards) Write a program that picks four cards from a deck of 52
+// cards and computes their sum. An Ace, King, Queen, and Jack represent 1, 13,
+// 12, and 11, respectively. Your program should display the number of picks that
+// yields the sum of 24.
+
+public class PickFourCards {  
+		
+			public static void main(String[] args) {
 				
-		int[] deckCards = generateCards();
-//		int[] pickedCards = checkCardsSum(24, deckCards);
-
-	int[] test;
-		
-	for (int j = 0; j < 10; j++){
-	
-		test = pickCards(deckCards, 4);
-		System.out.println();
-		
-		for (int i = 0; i < test.length; i++)
-			System.out.print( test[i] + " " + (( test[i]%13 == 0 ) ? 13 : test[i]/13) + "  ");
-	}
-
-//		for (int i = 0; i < pickedCards.length; i++) {
-//			String suit = suits[pickedCards[i] / 13];
-//			String rank = ranks[pickedCards[i] % 13];
-//			System.out.println( rank + " of " + suit );
-//		}
-	}
-	
-	public static int[] checkCardsSum(int sum, int[] deckCards) {
-		int test = 0;
-		int [] cards;
-		
-		do{
-			test  = 0;
-			cards = pickCards(deckCards, 4);
-			
-	 		for (int i = 0; i < cards.length; i++)
-				test += ( cards[i]%13 == 0) ? 13 : cards[i]/13;
+				String[] suits = {"Spades", "Hearts", "Diamonds", "Clubs"};
+				String[] ranks = {"King", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "Ace"};
+	 
+				int sum = 24;
+				int numberOfPicksThatYieldsTheSum = 0;
+				int spadeStart = 0;
+				int heartStart = 14;
+				int diamondStart = 27;
+				int clubsStart = 40;
+				int numberCardsInDeck = 52;
 				
-			System.out.println( test ); 
-		}while(test != 24);
-		
-		return cards;
-	}
+				int testSum, spade, heart, diamond, clubs;
+				
+				for (int a = spadeStart; a < heartStart; a++) { // cards of Spades
+					for (int b = heartStart; b < diamondStart; b++) { // cards of Hearts
+						for (int c = diamondStart; c < clubsStart; c++) { // cards of Diamonds
+							for (int d = clubsStart; d < numberCardsInDeck; d++) { // cards of Clubs
+								
+								testSum = 0;
+								spade = a%13 == 0 ? 13 : a%13; 
+								heart = b%13 == 0 ? 13 : b%13;
+								diamond = c%13 == 0 ? 13 : c%13;
+								clubs = d%13 == 0 ? 13 : d%13;
+								testSum = spade + heart + diamond + clubs;
+					 
 
-	public static int[] generateCards() {
-		int[] deck = new int[52];
-
-		// Initialize the cards
-		for (int i = 0; i < deck.length; i++)
-			deck[i] = i;
-		
-		// Shuffle the cards
-		for (int i = 0; i < deck.length; i++) {
-			// Generate an index randomly
-			int index = (int)(Math.random() * deck.length);
-			int temp = deck[i];
-			deck[i] = deck[index];
-			deck[index] = temp;
-		}
-		return deck;
-	}
-	
-	public static int[] pickCards(int[] deck, int numberOfCards) {
-	
-		int[] notTheSameCard = new int[numberOfCards];
-		int index;
-		
-		for (int i = 0; i < numberOfCards; i++)
-			notTheSameCard[i] = 55;
-		
-		while(notTheSameCard[numberOfCards -1] == 55){
-			index = (int)(Math.random() * deck.length);
-			
-			for (int i = 0; i < numberOfCards; i++) {
-				if( !(notTheSameCard[i] < 52) && (index != notTheSameCard[i]) ) {
-					notTheSameCard[i] = index;
-					break;
+								if(testSum == sum) {  
+									
+/** Test									
+									System.out.println( " " + ranks[spade % 13] + " of " + suits[spade / 13] +
+													  " " + ranks[heart % 13] + " of " + suits[heart / 13] +
+													  " " + ranks[diamond % 13] + " of " + suits[diamond / 13] +
+													  " " + ranks[clubs % 13] + " of " + suits[clubs / 13]);
+*/							
+									numberOfPicksThatYieldsTheSum++;
+								}
+							}
+						}
+					}
 				}
-			}
-		} 
-		return notTheSameCard;
+					 
+				System.out.println("Number of picks that yields the sum of " + sum + " = " + numberOfPicksThatYieldsTheSum);
+			} 
 	}
-}
-    
-    
-    
-    
+		    
+		    
+		    
+		    
