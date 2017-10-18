@@ -14,7 +14,7 @@ public class PickFourCards {
 				int numberOfPicksThatYieldsTheSum = 0;
 				int numberCardsInDeck = 52;
 				
-				int testSum, spade, heart, diamond, clubs;
+				int testSum, card1, card2, card3, card4;
 				
 				for (int a = 0; a < 52; a++) {
 					for (int b = a + 1; b < numberCardsInDeck; b++) { // b != a so b = a + 1;
@@ -23,21 +23,15 @@ public class PickFourCards {
 							for (int d = c + 1; d < numberCardsInDeck; d++) {  // d != a or b or c ; d = c + 1;
 								
 								testSum = 0;
-								spade = a%13 == 0 ? 13 : a%13; 
-								heart = b%13 == 0 ? 13 : b%13;
-								diamond = c%13 == 0 ? 13 : c%13;
-								clubs = d%13 == 0 ? 13 : d%13;
-								testSum = spade + heart + diamond + clubs;
+								card1 = a%13 == 0 ? 13 : a%13; 
+								card2 = b%13 == 0 ? 13 : b%13;
+								card3 = c%13 == 0 ? 13 : c%13;
+								card4 = d%13 == 0 ? 13 : d%13;
+								testSum = card1 + card2 + card3 + card4;
 					 
 
 								if(testSum == sum) {  
-									
-/** Test									
-									System.out.println( " " + ranks[spade % 13] + " of " + suits[spade / 13] +
-													  " " + ranks[heart % 13] + " of " + suits[heart / 13] +
-													  " " + ranks[diamond % 13] + " of " + suits[diamond / 13] +
-													  " " + ranks[clubs % 13] + " of " + suits[clubs / 13]);
-*/							
+ 							
 									numberOfPicksThatYieldsTheSum++;
 								}
 							}
