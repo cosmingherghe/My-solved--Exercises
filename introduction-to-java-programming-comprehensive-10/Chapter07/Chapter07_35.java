@@ -61,7 +61,7 @@ public class Hangman {
 				progress += "*";
 		}
 		
-		System.out.print("Enter a letter in word " + progress + " < "+ word + " > ");
+		System.out.print("Enter a letter in word " + progress + " > ");
 		
 		checkChar = input.nextLine();
 		
