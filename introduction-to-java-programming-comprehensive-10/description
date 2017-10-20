@@ -1,0 +1,73 @@
+ Chapter 2 Elementary Programming  
+- Writing a Simple Program
+- Reading Input from the Console
+- Identifiers
+- Variables
+- Assignment Statements and Assignment Expressions
+- Named Constants
+- Naming Conventions
+- Numeric Data Types and Operations
+- Numeric Literals
+- Evaluating Expressions and Operator Precedence 
+- Augmented Assignment Operators
+- Increment and Decrement Operators
+- Numeric Type Conversions
+- Software Development Process 
+- Common Errors and Pitfalls
+
+Chapter 3 Selections
+- boolean Data Type
+- if Statements
+- Two-Way if-else Statements
+- Nested if and Multi-Way if-else Statements
+- Common Errors and Pitfalls
+- Generating Random Numbers
+- Logical Operators
+- switch Statements
+- Conditional Expressions
+- Operator Precedence and Associativity
+- Debugging
+
+Chapter 4 Mathematical Functions, Characters and Strings
+ - Common Mathematical Functions
+ - Character Data Type and Operations
+ - The String Type
+ - Formatting Console Output
+ 
+ Chapter 5 Loops
+ - The while Loop
+ - The do-while Loop
+ - The for Loop
+ - Which Loop to Use?
+ - Nested Loops
+ - Minimizing Numeric Errors 
+ - Keywords break and continue
+ 
+ Chapter 6 Methods  
+- Defining a Method 
+- Calling a Method 
+- void Method Example 
+- Passing Arguments by Values 
+- Modularizing Code   
+- Overloading Methods 
+- The Scope of Variables  
+-  Method Abstraction and Stepwise Refinement 
+
+Chapter 7 Single-Dimensional Arrays 
+- Array Basics 246 
+- Copying Arrays 
+- Passing Arrays to Methods 
+- Returning an Array from a Method 
+- Case Study: Counting the Occurrences of Each Letter 
+- Variable-Length Argument Lists 
+- Searching Arrays 
+- Sorting Arrays 
+- The Arrays Class 
+- Command-Line Arguments 
+
+Chapter 8 Multidimensional Arrays 
+- Two-Dimensional Array Basics 
+- Processing Two-Dimensional Arrays 
+- Passing Two-Dimensional Arrays to Methods 
+- Multidimensional Arrays 
+
