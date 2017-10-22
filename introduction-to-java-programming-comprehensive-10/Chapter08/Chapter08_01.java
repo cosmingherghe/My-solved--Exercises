@@ -6,7 +6,6 @@ import java.util.Scanner;
 
 
 public class SumElementsColumnByColumn {
-
 	public static void main(String[] args) {
 		
 		double[][] matrix = new double[3][4];
@@ -23,7 +22,6 @@ public class SumElementsColumnByColumn {
 		}
 		
 		for (int column = 0; column < 4; column++) {
-			
 			System.out.println( "Sum of the elements at column " + column +" is " + sumColumn(matrix, column) );
 		}
 	}
@@ -35,8 +33,6 @@ public class SumElementsColumnByColumn {
 		for (int i = 0; i < m.length; i++) {
 			sum += m[i][columnIndex];
 		}
-		
 		return sum;
 	}
-
 }
