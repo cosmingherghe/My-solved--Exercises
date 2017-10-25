@@ -1,3 +1,4 @@
+ 
 /** (Sort students on grades) Rewrite Listing 8.2, GradeExam.java, to display the
   * students in increasing order of the number of correct answers.
   */
@@ -25,8 +26,8 @@ public class GradeExam {
 
 		for (int listGradeIncreasingOrder = 0; listGradeIncreasingOrder < sudentsIDAndGrades.length; listGradeIncreasingOrder++) {
 
-			System.out.println( "Student " + sudentsIDAndGrades[listGradeIncreasingOrder][0]
-						+ " Grade: " + sudentsIDAndGrades[listGradeIncreasingOrder][1] );
+			System.out.println( "Grade: " + sudentsIDAndGrades[listGradeIncreasingOrder][1]
+						+ "  Student: " + ( sudentsIDAndGrades[listGradeIncreasingOrder][0] + 1 ) );
 		}
 
 	}
@@ -49,16 +50,17 @@ public class GradeExam {
 		return students;
 	}
 
-	/** The method for sorting the numbers */ NOT DONE YET
+	/** The method for sorting the numbers */ 
 	public static void sortStudentsIncreasingGradeOrder(int[][] list) {
 		for (int i = 0; i < list.length - 1; i++) {
 			// Find the minimum in the list[i..list.length-1]
 			int[][] currentMin = new int[1][2];
-				currentMin[0][1] = list[i][1];
+			        currentMin[0][1] = list[i][1];
 			int currentMinIndex = i;
 
 			for (int j = i + 1; j < list.length; j++) {
 				if (currentMin[0][1] > list[j][1]) {
+					currentMin[0][0] = list[j][0];
 					currentMin[0][1] = list[j][1];
 					currentMinIndex = j;
 				}
