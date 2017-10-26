@@ -1,0 +1,15 @@
+
+public class NchooseKcombinations{
+  	public static void main(String[] args) {
+		System.out.println( choose(8, 2) );
+		System.out.println( n*(n-1)/2 );//combinations for 2 numbers
+	}
+	
+	public static long choose(long total, long choose){
+	    if(total < choose)
+	        return 0;
+	    if(choose == 0 || choose == total)
+	        return 1;
+	    return choose(total-1,choose-1)+choose(total-1,choose);
+	}
+}
