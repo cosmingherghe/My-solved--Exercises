@@ -33,7 +33,7 @@ public class FindNearestPoints {
 
 		//calculate number of 2 points combinations for array distances
 		double[][] pointsDistances = new double[ numberOfPoints * ( numberOfPoints - 1 ) / 2 ][5];
-        int pointsDistancesIndex = 0; 
+        	int pointsDistancesIndex = 0; 
 
 		// Compute distance for every two points 
 		for (int i = 0; i < points.length; i++) {
@@ -46,7 +46,7 @@ public class FindNearestPoints {
 				pointsDistances[pointsDistancesIndex][2] = points[j][0]; //add point 2
 				pointsDistances[pointsDistancesIndex][3] = points[j][1];
 				pointsDistances[pointsDistancesIndex][4] = distance;     //add distance
-                pointsDistancesIndex++; 
+                		pointsDistancesIndex++; 
 
 				if (shortestDistance > distance) { 
 					shortestDistance = distance; // Update shortestDistance
