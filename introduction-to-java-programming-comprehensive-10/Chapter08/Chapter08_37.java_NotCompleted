@@ -1,0 +1,60 @@
+/**  (Latin square) A Latin square is an n-by-n array filled with n different Latin letters,
+  *  each occurring exactly once in each row and once in each column. Write a 
+  *  program that prompts the user to enter the number n and the array of characters,
+  *  as shown in the sample output, and checks if the input array is a Latin square.
+  *  The characters are the first n characters starting from A.
+  * 
+  *  Enter number n: 4
+  *  Enter 4 rows of letters separated by spaces:
+  *  A B C D
+  *  B A D C
+  *  C D B A
+  *  D C A B
+  *  The input array is a Latin square
+  * 
+  * 
+  *  Enter number n: 3
+  *  Enter 3 rows of letters separated by spaces:
+  *  A F D
+  *  Wrong input: the letters must be from A to C
+  * 
+  */
+
+import java.util.*;
+
+public class LatinSquare {
+	public static void main(String[] args) {
+
+		Scanner input = new Scanner(System.in);
+		int rows;
+
+		System.out.print("Enter number n: ");
+		rows = input.nextInt();
+		
+		char[][] matrix = new char[n][n];
+
+		System.out.printf("Enter %d rows of letters separated by spaces:\n", rows);
+ 	
+  		for (int i = 0; i < rows; i++) {
+  			keyBoardInput = input.nextLine();
+			checkInput(keyBoardInput, matrix);
+		}
+		
+	}
+
+	public static void checkLatinSquare(String input, char[][] chars) {
+
+		
+		//String chars[] = nodes.split(" ");
+				//matrix[i][j] = chars[j];
+		
+		String nodes = "";
+		 
+		for (int i = 0; i < matrix.length; i++) {
+			for (int j = i + 1; j < matrix.length; j++) {
+ 				System.out.println(matrix[i][j]);
+			}
+		}
+		
+	} 
+}
