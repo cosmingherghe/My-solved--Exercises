@@ -1,6 +1,4 @@
-11 
-
-/** 1 (Game: nine heads and tails) Nine coins are placed in a 3-by-3 matrix with some
+/**  (Game: nine heads and tails) Nine coins are placed in a 3-by-3 matrix with some
   *  face up and some face down. You can represent the state of the coins using a
   *  3-by-3 matrix with values 0 (heads) and 1 (tails). Here are some examples:
   *  
@@ -35,7 +33,17 @@ public class NineHeadsAndTails{
 		System.out.print("Enter a number between 0 and 511: ");
 		int index= input.nextInt();
 		
-		System.out.print( possibilities[index] );
+		displayNineHeadsAndTailsMatrix( possibilities[index] );
+	}
+	
+	public static void  displayNineHeadsAndTailsMatrix(String matrix) {
+		for (int i = 0; i < matrix.length(); i++) { 
+			
+			System.out.print( matrix.charAt(i) == '0' ? "H ": "T ");
+			
+			if( (1+i)%3 == 0 )
+				System.out.println();
+		}
 	}
 	
 	public static String[] getPossibilities() { 
