@@ -21,40 +21,81 @@
   */
 
 import java.util.*;
+import java.io.*;
 
 public class LatinSquare {
 	public static void main(String[] args) {
 
 		Scanner input = new Scanner(System.in);
-		int rows;
+		String keyBoardInput = "";
+		int n;
 
 		System.out.print("Enter number n: ");
-		rows = input.nextInt();
+		n= input.nextInt(); 
 		
 		char[][] matrix = new char[n][n];
+		System.out.printf("Enter %d rows of capital letters separated by spaces:\n", n);
 
-		System.out.printf("Enter %d rows of letters separated by spaces:\n", rows);
- 	
-  		for (int i = 0; i < rows; i++) {
-  			keyBoardInput = input.nextLine();
-			checkInput(keyBoardInput, matrix);
-		}
-		
-	}
-
-	public static void checkLatinSquare(String input, char[][] chars) {
-
-		
-		//String chars[] = nodes.split(" ");
-				//matrix[i][j] = chars[j];
-		
-		String nodes = "";
-		 
-		for (int i = 0; i < matrix.length; i++) {
-			for (int j = i + 1; j < matrix.length; j++) {
- 				System.out.println(matrix[i][j]);
+  		for (int i = 0; i < n; i++) { 
+  		
+  			if(i == 0) {
+	  			keyBoardInput = input.nextLine();
+	  			keyBoardInput = input.nextLine();
+				if( checkLatinSquare(keyBoardInput, matrix, i) )
+						break; 
+			}
+			else {
+				keyBoardInput = input.nextLine(); 
+				if( checkLatinSquare(keyBoardInput, matrix, i) )
+						break; 
 			}
 		}
 		
+	}
+	 
+
+	public static boolean checkLatinSquare(String input, char[][] mtrx, int rowNumber) {
+
+		char[] letters = input.replaceAll(" ", "").toCharArray(); //delete spaces & create char array
+		 
+		//check for letters to be in the range 
+		for (int i = 0; i < letters.length; i++) {
+			if( letters[i] > ('A' + mtrx.length - 1) ) {
+				System.out.println("Wrong input: the letters must be from A to " + (char)('A' + mtrx.length - 1) );
+				return true;
+			}
+		}
+		
+		//check column for duplicate letters
+		for (int i = 0; i < letters.length; i++) {
+			for (int j = i + 1; j < letters.length; j++) {
+ 				if( letters[i] == letters[j] ) {
+ 					System.out.println("Wrong input: the letters must each occurring exactly once in each row" );
+					return true;
+				}
+			}
+		}
+		
+		
+		//(IF letters in range & no duplicates letters in the input)
+		//add line of letters to matrix row
+		for (int i = 0; i < letters.length; i++) {
+ 				 mtrx[rowNumber][i] = letters[i]; 
+		}
+
+		//check rows for duplicate letters
+		if(rowNumber > 0) {  //if there are more than 2 rows
+
+			for (int i = 0; i < rowNumber; i++) {
+					for (int j = 0; j < mtrx.length; j++) {
+						System.out.println(mtrx[i][j] + " == " + mtrx[i + 1][j]); //TEST
+		 				if( mtrx[i][j] == mtrx[i + 1][j] )
+ 					System.out.println("Wrong input: the letters must each occurring exactly once in each column" );
+					return true;
+					}
+			}
+		}//end IF
+		
+		return false;		
 	} 
 }
