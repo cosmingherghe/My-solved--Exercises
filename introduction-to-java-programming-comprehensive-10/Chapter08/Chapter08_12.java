@@ -72,26 +72,17 @@ public class ComputeTax {
 				}
 				else
 					tax += brackets[0][0] * rates[i];
-				
-				System.out.println("Tax is " + tax + " + ");
 			}
 			else {
 				if( i == 5) {
-				System.out.println( "i:" + i + " > (" + income + " - " + brackets[status][i-1] + ") * " + rates[i]);
 					tax += ( income - brackets[status][i-1] ) * rates[i];
-					System.out.println("Tax is " + tax  + " +");
 				}
 				else if( income > brackets[status][i] ) {
-				
-				System.out.println( "i:" + i + " > (" + income + " - " + brackets[status][i-1] + ") * " + rates[i]);
-					tax += ( income - brackets[status][i-1] ) * rates[i];
-					System.out.println("Tax is " + tax + " +");
-					break;
+					tax += ( brackets[status][i] - brackets[status][i-1] ) * rates[i];
 				}
 				else { 
-				System.out.println( "i:" + i + " > (" + brackets[status][i] + " - " + brackets[status][i-1] + ") * " + rates[i]); 
-					tax += ( brackets[status][i] - brackets[status][i-1] ) * rates[i];
-					System.out.println("Tax is " + tax + " +");
+					tax += ( income - brackets[status][i-1] ) * rates[i];
+					break;
 				}
 			}	
 		}
