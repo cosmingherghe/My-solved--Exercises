@@ -19,7 +19,7 @@
 */
 import java.util.*;
 
-public class MatrixEvenNumber {
+public class RowSorting {
 	public static void main(String[] args) {
 
 					 
