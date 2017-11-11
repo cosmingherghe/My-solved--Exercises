@@ -20,7 +20,7 @@
 
 import java.util.*;
 
-public class ColumnSorting{
+public class StrictlyIdenticalArrays{
 	public static void main(String[] args) { 
 		
 		int[][] matrix1 = new int[3][3]; 
