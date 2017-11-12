@@ -24,15 +24,15 @@ public class AreaOfAtriangle {
 	public static void main(String[] args) {
  
 		double[][] trianglePoints = getPoints();
-		
-		getTriangleArea(trianglePoints);
+		double area = getTriangleArea(trianglePoints);
+
+		System.out.println( "The area of the triangle is: " + area );
 	}
 
 	public static double getTriangleArea(double[][] points) {
-		
-		double area = ( points[0][0] * (points[1][1] - points[2][1]) + points[1][0] * (points[2][1] - points[0][1]) + points[2][0] * (points[0][1] - points[1][1]) )/2;
 
-		System.out.println( "The area of the triangle is: " + Math.abs(area) );
+		double area = ( points[0][0] * (points[1][1] - points[2][1]) + points[1][0] * (points[2][1] - points[0][1]) + points[2][0] * (points[0][1] - points[1][1]) )/2;
+		return  Math.abs(area);
 	}
  
 	public static double[][] getPoints() {
