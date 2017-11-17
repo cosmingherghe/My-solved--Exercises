@@ -1,0 +1,115 @@
+/**
+	(Geometry: polygon subareas) A convex 4-vertex polygon is divided into four
+	triangles.
+	Write a program that prompts the user to enter the coordinates of four vertices and
+	displays the areas of the four triangles in increasing order. 
+	Here is a sample run:
+	 
+	Enter x1, y1, x2, y2, x3, y3, x4, y4: -2.5 2 4 4 3 -2 -2 -3.5
+	The areas are 6.17 7.96 8.08 10.42 
+*/
+
+import java.util.*;
+
+public class PolygonSubareas{
+	public static void main(String[] args) { 
+ 	
+	
+		//double[][] polygonPoints = getPolygonPoints();
+		
+		double[][] polygonPoints = {{-2.5, 2}, {4, 4}, {3, -2}, {-2, -3.5}};
+		 
+		double[] intersectionPoints = lineLineIntersection(polygonPoints);
+		
+		if(intersectionPoints[2] == (double)0) {
+			System.out.println("The area is 0");
+		}
+		else {
+			double[] areas = getTriangleArea(polygonPoints, intersectionPoints);
+			System.out.print("The areas are ");
+			for(int i = 0; i < areas.length; i++) {
+				System.out.print( areas[i] + " ");
+			}
+		}   
+	}
+	
+	public static double[] getTriangleArea(double[][] points, double[] intersection) {
+	
+	
+		double[][] individualTrianglePoints = new double[4][6];
+		double[] area = new double[points.length];
+	
+		for(int i = 0; i < points.length; i++) {
+	
+			individualTrianglePoints[i][0] = points[i][0];   // Add Ax
+			individualTrianglePoints[i][1] = points[i][1];   // Add Ay
+	
+			individualTrianglePoints[i][2] = points[ (i+1 == 4) ? 0 : i+1 ][0];   // Add Bx
+			individualTrianglePoints[i][3] = points[ (i+1 == 4) ? 0 : i+1 ][1];   // Add By
+	
+			individualTrianglePoints[i][4] = intersection[0];   // Add Cx
+			individualTrianglePoints[i][5] = intersection[0];   // Add Cy
+		}
+	
+	
+		//calculate area for each triangle
+		for(int i = 0; i < individualTrianglePoints.length; i++) {
+	
+			area[i] = ( individualTrianglePoints[i][3] * ( individualTrianglePoints[i][0] - individualTrianglePoints[i][3] ) + individualTrianglePoints[i][5] * ( individualTrianglePoints[i][2] - individualTrianglePoints[i][5] ) + individualTrianglePoints[i][1] * ( individualTrianglePoints[i][4] - individualTrianglePoints[i][1] ) ) / 2;
+	
+			area[i] = Math.abs(area[i]);
+		}
+	
+		return area;
+	} 
+	
+	public static double[] lineLineIntersection(double[][] points) {
+
+		double[] intersectionxy = new double[3];
+		
+	        // Line AB represented as (a1x + b1y = c1)
+	        double a1 = points[1][1] - points[0][1];  // B.y - A.y;
+	        double b1 = points[0][0] - points[1][0];  // A.x - B.x;
+	        double c1 = (a1 * points[0][0]) + (b1 * points[0][1]);
+	
+	        // Line CD represented as a2x + b2y = c2
+	        double a2 = points[3][1] - points[2][1];  // D.y - C.y;
+	        double b2 = points[2][0] - points[3][0];  // C.x - D.x;
+	        double c2 = (a2 * points[2][0]) + (b2 * points[2][1]);
+	      
+	        double determinant = a1*b2 - a2*b1;
+	      
+	        if (determinant == 0) {
+	            // The lines are parallel. 
+			intersectionxy[2] = 0;
+	            return intersectionxy;
+	        }
+	        else {
+	            double x = (b2*c1 - b1*c2) / determinant;
+	            double y = (a1*c2 - a2*c1) / determinant;
+			
+			intersectionxy[2] = 1;
+			intersectionxy[0] = x;
+			intersectionxy[1] = y;
+
+			return intersectionxy;
+	        }
+ 	}
+ 	
+ 	public static double[][] getPolygonPoints() {
+
+		Scanner input = new Scanner(System.in);
+		double[][] polygon = new double[4][2]; 
+
+		System.out.println( "Enter x1, y1, x2, y2, x3, y3, x4, y4: ");
+
+		for(int i = 0; i < polygon.length; i++) { 
+			for(int j = 0; j < polygon[i].length; j++) { 
+				polygon[i][j] = input.nextDouble();
+			}
+		}
+
+		System.out.println(); //a new line 
+		return polygon;
+	}
+}
