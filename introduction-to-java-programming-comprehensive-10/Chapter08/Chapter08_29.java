@@ -38,33 +38,36 @@ public class IdenticalArrays{
 	
 	public static boolean equals(int[][] m1, int[][] m2) {
 
-		boolean[] numberFound = new boolean[m2.length * m2.length];
+		boolean[][] numberFound = new boolean[m2.length * m2.length][2];
 		int numberFoundIndex = 0;
 		
 		for(int i = 0; i < m1.length; i++) {  
 			for(int j = 0; j < m1.length; j++) { 
 				//foreach number in Matrix1 check for a match in Matrix2   
+				numberFound[numberFoundIndex][0] = !numberFound[numberFoundIndex][0];
 				
 				if( numberFoundInMatrix(m1[i][j], m2, numberFound) ) { 
-					numberFound[numberFoundIndex] = !numberFound[numberFoundIndex];
+					numberFound[numberFoundIndex][1] = !numberFound[numberFoundIndex][1];
 				}
 				numberFoundIndex++;
 			} 
 		}
 		
 		for (int i = 0; i < numberFound.length; i++) {
-			if(!numberFound[i])
-				return false;
+			for (int j = 0; j < numberFound[i].length; j++) {
+				if(!numberFound[i][j])
+					return false;
+			}
 		}
 		return true;
 	}
-	public static boolean numberFoundInMatrix(int number, int[][] mtrx, boolean[] numberFoundAt) {
+	public static boolean numberFoundInMatrix(int number, int[][] mtrx, boolean[][] numberFoundAt) {
 		
 		int numberFoundIndex = 0;
 		
 		for (int i = 0; i < mtrx.length; i++) {
 			for (int j = 0; j < mtrx.length; j++) {
-				if(number == mtrx[i][j] && !numberFoundAt[numberFoundIndex]) {
+				if( number == mtrx[i][j] && !numberFoundAt[numberFoundIndex][0] && !numberFoundAt[numberFoundIndex][1] ) {
 					System.out.println(mtrx[i][j] + " < ");
 					return true;
 				}
