@@ -1,69 +1,71 @@
 /**
-	(Game: find the flipped cell) Suppose you are given a 6-by-6 matrix filled with
-	0s and 1s. All rows and all columns have an even number of 1s. Let the user flip
-	one cell (i.e., flip from 1 to 0 or from 0 to 1) and write a program to find which
-	cell was flipped. Your program should prompt the user to enter a 6-by-6 array
-	with 0s and 1s and find the first row r and first column c where the even number
-	of the 1s property is violated (i.e., the number of 1s is not even). The flipped cell
-	is at (r, c). Here is a sample run:
-	
-	Enter a 6-by-6 matrix row by row:
-	1 1 1 0 1 1
-	1 1 1 1 0 0
-	0 1 0 1 1 1
-	1 1 1 1 1 1
-	0 1 1 1 1 0
-	1 0 0 0 0 1
-	The flipped cell is at (0, 1)
-*/ 
+(Largest block) Given a square matrix with the elements 0 or 1, write a program
+to find a maximum square submatrix whose elements are all 1s. Your program
+should prompt the user to enter the number of rows in the matrix. The program
+then displays the location of the first element in the maximum square submatrix
+and the number of the rows in the submatrix. Here is a sample run:
 
-public class MatrixEvenNumber {
+Enter the number of rows in the matrix: 5
+Enter the matrix row by row:
+1 0 1 0 1
+1 1 1 0 1
+1 0 1 1 1
+1 0 1 1 1
+1 0 1 1 1
+
+The maximum square submatrix is at (2, 2) with size 3
+
+Your program should implement and use the following method to find the maximum
+square submatrix:
+
+public static int[] findLargestBlock(int[][] m)
+
+The return value is an array that consists of three values. The first two values are
+the row and column indices for the first element in the submatrix, and the third
+value is the number of the rows in the submatrix.
+*/
+
+public class HelloWorld {
 	public static void main(String[] args) {
- 
-		int[][] matrix = { 	{ 1, 1, 1, 0, 1, 1 },
-					{ 1, 1, 1, 1, 0, 0 },
-					{ 0, 1, 0, 1, 1, 1 },
-					{ 1, 1, 1, 1, 1, 1 },
-					{ 0, 1, 1, 1, 1, 0 },
-					{ 1, 0, 0, 0, 0, 1 } };
+	
+		int[][] matrix = { 	{1, 0, 1, 0, 1},
+					{1, 1, 1, 0, 1},
+					{1, 0, 1, 1, 1},
+					{1, 0, 1, 1, 1},
+					{1, 0, 1, 1, 1 } };
 					
-		// simulate user randomly flipping a random cell from 1 to 0 or from 0 to 1
-		int x = (int)(Math.random() * 6);		
-		int y = (int)(Math.random() * 6); 
-		matrix[x][y] = ( matrix[x][y] == 0) ? 1 : 0 ;
-		
-		//show flipped Row and Column
-		flippedRowAndColumn(matrix); 
+					
+		System.out.println("Hello World");
 	}
 	
-	public static void flippedRowAndColumn(int[][] mtrx) {
-	 		
-	 	int rowsTotalOnes;
-	 	int columnsTotalOnes;
-	 	int row = 0;
-	 	int column = 0;
+	public static int[] findLargestBlock(int[][] m) {
 
-		//compute rows & columns total of 1s
-		for(int i = 0; i < mtrx.length; i++) {
-
-		 	rowsTotalOnes = 0;
-		 	columnsTotalOnes = 0;
-		 	
-			for(int j = 0; j < mtrx.length; j++) {
-				rowsTotalOnes += mtrx[i][j];
-				columnsTotalOnes += mtrx[j][i];
+		for(int row = 0; row < m.length - 1; row++) {
+			for(int column = 0; column < m.length - 1; column++) {
+	
+				if( minSquareFound(m, row, column) ) {
+	
+				}
 			}
-			
-			//find row of flipped cell
-			if( rowsTotalOnes % 2 != 0)
-				row = i;
-				
-			//find column of flipped cell
-			if( columnsTotalOnes % 2 != 0)
-				column = i;
 		}
-
-		System.out.printf("The flipped cell is at (%d, %d).", row, column); 
+		return 
 	}
-	 
+	
+	
+	//daca exista rand si coloana in plus sunt si ele pline de 1; returneaza cate
+	public static int getExtraSides(int[][] mtrx, int r, int c) {
+		
+		if(r + 2 < mtrx.length) {
+	
+		}	
+	}
+	
+	// find min square
+	public static boolean minSquareFound(int[][] mtrx, int r, int c) {
+		if( mtrx[r][c] == 1 && mtrx[r][c + 1] == 1 && mtrx[r + 1][c] == 1 && mtrx[r + 1][c + 1] == 1 ) {
+			return true;
+		}
+		else
+			return false;
+	}
 }
