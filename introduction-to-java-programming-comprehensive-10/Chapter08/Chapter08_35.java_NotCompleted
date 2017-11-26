@@ -24,33 +24,82 @@
 	the row and column indices for the first element in the submatrix, and the third
 	value is the number of the rows in the submatrix.
 	*/
+import java.util.*;
 
 public class HelloWorld {
 	public static void main(String[] args) {
-		System.out.println("Hello World");
+
+		int[][] matrix = getMatrix(); 
+		int[] largestBlock = findLargestBlock( matrix );
+		
+		if(largestBlock[2] > 0)
+			System.out.print("The maximum square submatrix is at (" + largestBlock[0] + ", " + largestBlock[1] + ") with size " + largestBlock[2] );
+		else
+			System.out.print("There is not a maximum square submatrix");
 	}
    
 	public static int[] findLargestBlock(int[][] m) {
-	
+	 
+		int[] largestBlockLocation=  {0 ,0 ,0} ;
+		
 		for(int row = 0; row < m.length - 1; row++) {
 			for(int column = 0; column < m.length - 1; column++) {
-	
 				if( minSquareFound(m, row, column) ) {
-	
-	
+
+					int newBlock = getExtraSides(m, row, column);
+					if(newBlock > largestBlockLocation[2]) {
+
+						largestBlockLocation[2] = newBlock;
+						largestBlockLocation[1] = column;
+						largestBlockLocation[0] = row;
+						
+						System.out.println(m[row][column]);
+					}
 				}
 			}
 		}
+		return largestBlockLocation;
 	}
 	
 	
 	//daca exista rand si coloana in plus sunt si ele pline de 1; returneaza cate
 	public static int getExtraSides(int[][] mtrx, int r, int c) {
+		int extraSides = 1;  //whose elements are all 1s
+		int row, column;
+		boolean newValidLine = true;
 		
-		if(r + 2 < mtrx.length) {
-
-			
+		if(r + 2 < mtrx.length && c + 2 < mtrx.length) {  
+			for(int i = r + 2; i < mtrx.length && newValidLine; i++){
+				row = r + extraSides;
+				column = c + extraSides;
+				
+				//check columns for the extra line
+				for(int j = extraSides + 1; j >  0 ; j--){
+					System.out.println("mtrx[" + row + "][" + column + "]");
+					if(mtrx[row][column] != 1) {
+						newValidLine = !newValidLine;
+						newValidLine = false;
+						break;
+					}
+					row--;
+				}
+				
+				//check rows for the extra line
+				row = r + extraSides;
+				
+				for(int j = extraSides + 1; j >  0 ; j--){
+					if(mtrx[row][column] != 1) {
+						newValidLine = !newValidLine;
+						newValidLine = false;
+						break;
+					}
+					column--;
+				}
+				
+				extraSides++;
+			}
 		}	
+		return extraSides;
 	}
 	
 	// find min square
@@ -62,4 +111,26 @@ public class HelloWorld {
 			return false;
 	}
 
+	public static int[][] getMatrix() {
+
+		Scanner input = new Scanner(System.in);
+	 	System.out.print("Enter the number of rows in the matrix: ");
+	 	int rows = 6;//input.nextInt();
+		int[][] mtrx = new int[rows][rows]; 
+		 
+		System.out.println();
+		for(int i = 0; i < mtrx.length; i++) {
+			for(int j = 0; j < mtrx[i].length; j++){
+				mtrx[i][j] = (int)(Math.random() * 2);
+				
+				//Display Matrix
+				System.out.print(mtrx[i][j] + " ");
+			}
+			System.out.println();
+		}
+		
+		System.out.println();
+
+		return mtrx;
+	}
 }
