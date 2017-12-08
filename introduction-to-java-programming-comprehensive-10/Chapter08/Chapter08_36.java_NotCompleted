@@ -87,12 +87,19 @@ public class LatinSquare {
 		if(rowNumber > 0) {  //if there are more than 2 rows
 
 			for (int i = 0; i < rowNumber; i++) {
+				System.out.println(i + ">i>"); // TEST
+				
+				for (int z = rowNumber; 0 < z; z--) {
+					System.out.println(""); // TEST
+					
 					for (int j = 0; j < mtrx.length; j++) {
-						System.out.println(mtrx[i][j] + " == " + mtrx[i + 1][j]); //TEST
-		 				if( mtrx[i][j] == mtrx[i + 1][j] )
- 					System.out.println("Wrong input: the letters must each occurring exactly once in each column" );
-					return true;
+						System.out.println( i +""+ j + " != " + z + "" + j ); //TEST
+		 				if( mtrx[i][j] == mtrx[z][j] ) {
+		 					System.out.println("Wrong input: the letters must each occurring exactly once in each column" );
+		 					return true;
+		 				}
 					}
+				}
 			}
 		}//end IF
 		
