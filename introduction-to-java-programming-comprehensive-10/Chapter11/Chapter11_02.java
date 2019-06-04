@@ -26,32 +26,34 @@ public class HelloWorld{
      public static void main(String []args){ 
          
         //Write a test program that creates a Person, Student, Employee, Faculty, and Staff, and invokes their toString() methods.
-        ArrayList<Person> test = new ArrayList<>();
-        
+
         //Create a Person
-        test.add(new Person("Dwayne Johnson", "Southwest Ranches, Florida, US", "014545454545", "dwaynejohnson@gmail.com"));
+        Person test1 = new Person("Dwayne Johnson", "Southwest Ranches, Florida, US", "014545454545", "dwaynejohnson@gmail.com");
         
         //Create a Student,
-        test.add(new Student("Rachel Meghan Markle", "Los Angeles, California, U.S.", "01232323244", "rachelmeghan@gmail.com", 1)); 
+        Person test2 =  new Student("Rachel Meghan Markle", "Los Angeles, California, U.S.", "01232323244", "rachelmeghan@gmail.com", 2); 
         
         //Create a Employee, 
-        test.add(new Employee("Trevor Engelson", "Great Neck, New York, U.S.", "01567884611", "trevorengelson@gmail.com", "1st Floor A2", 100000.00));
+        Person test3 =  new Employee("Trevor Engelson", "Great Neck, New York, U.S.", "01567884611", "trevorengelson@gmail.com", "1st Floor A2", 100000.00);
         
         
         //Create a Faculty, 
-        test.add(new Faculty("Jennifer Ann McCarthy", "Evergreen Park, Illinois, U.S.", "010424648841", "jenniferann@gmail.com", "3rd Floor B6", 200000.00, "07:00-15:00", "Professor")); 
+        Person test4 = new Faculty("Jennifer Ann McCarthy", "Evergreen Park, Illinois, U.S.", "010424648841", "jenniferann@gmail.com", "3rd Floor B6", 200000.00, "07:00-15:00", "Professor"); 
         
         
         //Create a Staff,
-        test.add(new Staff("Anna Nicole Smith", "Evergreen Park, Illinois", "01555588884", "annanicole@gmail.com", "2nd Floor A6", 130222.25, "Assistant Professor"));
+        Person test5 = new Staff("Anna Nicole Smith", "Evergreen Park, Illinois", "01555588884", "annanicole@gmail.com", "2nd Floor A6", 130222.25, "Assistant Professor");
         
-        System.out.println( "Class: " + test.get(0).getClass().getName() + "\n" + test.get(0) + "\n");
         
-        System.out.println( "Class: " + test.get(1).getClass().getName() + "\n" + test.get(1) + "\n");
+        System.out.println( "Class: " + test1.getClass().getName() + "\n" + test1.toString() + "\n");
         
-        System.out.println( "Class: " + test.get(2).getClass().getName() + "\n" + test.get(2) + "\n");
+        System.out.println( "Class: " + test2.getClass().getName() + "\n" + test2.toString() + "\n");
         
-        System.out.println( "Class: " + test.get(3).getClass().getName() + "\n" + test.get(3) + "\n");
+        System.out.println( "Class: " + test3.getClass().getName() + "\n" + test3.toString() + "\n");
+        
+        System.out.println( "Class: " + test4.getClass().getName() + "\n" + test4.toString() + "\n");
+        
+        System.out.println( "Class: " + test5.getClass().getName() + "\n" + test5.toString() + "\n");
         
         //System.out.printf("%s \n Color: %s\n Is filled: %b%n" , tri1.toString(), tri1.getColor(), tri1.isFilled() );
      }
@@ -149,6 +151,6 @@ class Staff extends Employee {
     
     @Override
     public String toString() { 
-        return super.toString() + "\nTitle: " + this.title + "\n";
+        return super.toString() + "Title: " + this.title + "\n";
     }
 }
