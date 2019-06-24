@@ -1,4 +1,4 @@
-CHAPTER SUMMARY
+# CHAPTER SUMMARY
 1. Making programs modular and reusable is one of the central goals in software engineering. Java provides many powerful constructs that help to achieve this goal. Methods are one such construct.
 2. The method header specifies the modifiers, return value type, method name, and parameters of the method. The static modifier is used for all the methods in this chapter.
 3. A method may return a value. The returnValueType is the data type of the value the method returns. If the method does not return a value, the returnValueType is the keyword void.
