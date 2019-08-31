@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="introduction-to-java-programming-comprehensive-10/Chapter01"/>
+	<classpathentry kind="src" path="introduction-to-java-programming-comprehensive-10/Chapter02"/>
+	<classpathentry kind="src" path="introduction-to-java-programming-comprehensive-10/Chapter03"/>
+	<classpathentry kind="src" path="introduction-to-java-programming-comprehensive-10/Chapter04"/>
+	<classpathentry kind="src" path="introduction-to-java-programming-comprehensive-10/Chapter05"/>
+	<classpathentry kind="src" path="introduction-to-java-programming-comprehensive-10/Chapter06"/>
+	<classpathentry kind="src" path="introduction-to-java-programming-comprehensive-10/Chapter07"/>
+	<classpathentry kind="src" path="introduction-to-java-programming-comprehensive-10/Chapter08"/>
+	<classpathentry kind="src" path="introduction-to-java-programming-comprehensive-10/Chapter09"/>
+	<classpathentry kind="src" path="introduction-to-java-programming-comprehensive-10/Chapter10"/>
+	<classpathentry excluding="Chapter11_03/|Chapter11_05/|Chapter11_04/|Chapter11_06/" kind="src" path="introduction-to-java-programming-comprehensive-10/Chapter11"/>
+	<classpathentry kind="src" path="introduction-to-java-programming-comprehensive-10/Chapter11/Chapter11_03"/>
+	<classpathentry kind="src" path="introduction-to-java-programming-comprehensive-10/Chapter11/Chapter11_04"/>
+	<classpathentry kind="src" path="introduction-to-java-programming-comprehensive-10/Chapter11/Chapter11_05"/>
+	<classpathentry kind="src" path="introduction-to-java-programming-comprehensive-10/Chapter11/Chapter11_06"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
