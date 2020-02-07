@@ -9,10 +9,16 @@ public class Calculator {
 
     public Calculator(double num1, char operator, double num2) {
         this.num1 = num1;
+ 
+        if( num2 == 0.0 )  //Check Division by a zero 
+            throw new ArithmeticException("Division by a zero");
         this.num2 = num2;
-        this.operator = operator;
-        this.result = validOperator(operator) ? doCalculations(num1, num2, operator) : 0.0;   
-     }
+
+        if(validOperator(operator))
+            this.operator = operator;
+
+        this.result = doCalculations(num1, num2, operator);   
+    }
 
     private boolean validOperator(char operator) throws IllegalArgumentException {
         if ( (operator == '+') || (operator == '-') || (operator == '*') || (operator == '/') )
@@ -23,16 +29,12 @@ public class Calculator {
     }
 
     private double doCalculations(double num1, double num2, char operator) {
-        if(validOperator(operator)) {
             switch(operator) { 
                 case '-' : return num1 - num2; 
                 case '+' : return num1 + num2;  
                 case '/' : return num1 / num2;  
-                case '*' : return num1 * num2;  
+                case '*' : return num1 * num2; 
             } 
-        }
-        else 
-            System.out.println("Invalid operator");
             return 0.0;  
     }
     
