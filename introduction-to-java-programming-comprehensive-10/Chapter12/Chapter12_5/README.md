@@ -6,6 +6,9 @@ Create the IllegalTriangleException class, and modify the constructor of the Tri
 /** Construct a triangle with the specified sides */
 
 public Triangle(double side1, double side2, double side3)
+
 	throws IllegalTriangleException {
+	
 	// Implement it
+	
 }
