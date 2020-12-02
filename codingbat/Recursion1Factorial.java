@@ -14,7 +14,7 @@ class Main {
     System.out.println( factorial( 6 ) ); 
   } 
   
-    static public int factorial(int n) {
+    static int factorial(int n) {
   
       if(n < 2) return n * 1;
 
